@@ -26,8 +26,8 @@ Before diving in, make sure you have:
 - Go to **IAM Console** from your AWS dashboard
 - Create a new IAM user with Administrator Access (for learning purposes) `junior-analyst`
 - Enable MFA (Multi-Factor Authentication) for enhanced security
-    - [IAM User Setup](docs/screenshots/Screenshot_22-7-2025_19100_us-east-1.console.aws.amazon.com.jpeg)
-    - [IAM User Setup](docs/screenshots/Screenshot_22-7-2025_191557_us-east-1.console.aws.amazon.com.jpeg)
+  ![IAM User Setup](docs/screenshots/Screenshot_22-7-2025_19100_us-east-1.console.aws.amazon.com.jpeg)
+  ![IAM User Setup](docs/screenshots/Screenshot_22-7-2025_191557_us-east-1.console.aws.amazon.com.jpeg)
 ---
 
 # 🔐 Deep Dive: IAM Policies in AWS
@@ -112,7 +112,7 @@ I simulated the following AWS Config actions:
 - Policy simulation avoids accidental misconfigurations and reinforces the importance of least privilege.
 
 ### 📸 Screenshot Example
-- [Policy Simulator showing denied AWS Config actions](docs/screenshots/Screenshot_22-7-2025_192953_us-east-1.console.aws.amazon.com.jpeg)
+![Policy Simulator showing denied AWS Config actions](docs/docs/screenshots/Screenshot_22-7-2025_192314_policysim.aws.amazon.com.jpeg)
 
 ---
 
@@ -139,7 +139,7 @@ I focused on key S3 operations across buckets and objects:
 - The IAM Policy Simulator is essential for verifying granular access and refining policy design.
 
 ### 📸 Screenshot Reference
-- [IAM Simulation: AmazonS3FullAccess results](docs/screenshots/Screenshot_22-7-2025_192452_policysim.aws.amazon.com.jpeg)
+![IAM Simulation: AmazonS3FullAccess results](docs/screenshots/Screenshot_22-7-2025_192452_policysim.aws.amazon.com.jpeg)
 
 ---
 
@@ -149,20 +149,20 @@ I focused on key S3 operations across buckets and objects:
 - Choose a Free Tier eligible AMI (e.g., Amazon Linux 2023)
 - Select instance type: `t2.micro`
 - Configure security group: open SSH (port 22) for access
-  - [EC2 Instance Setup](https://github.com/SARWILLY/Cloud-Security/blob/dd77120c75caeefdadc83c3248a9dc684eb674d5/docs/docs/screenshots/Screenshot%202025-07-21%20172612.png)
-  - [EC2 Instance Setup](https://github.com/SARWILLY/Cloud-Security/blob/162ca306566f562e7d6c203396d05d88323da665/docs/docs/screenshots/Screenshot%202025-07-21%20200821.png)
-  - [EC2 Instance Setup](https://github.com/SARWILLY/Cloud-Security/blob/162ca306566f562e7d6c203396d05d88323da665/docs/docs/screenshots/Screenshot%202025-07-21%20201052.png)
+  ![EC2 Instance Setup](https://github.com/SARWILLY/Cloud-Security/blob/dd77120c75caeefdadc83c3248a9dc684eb674d5/docs/docs/screenshots/Screenshot%202025-07-21%20172612.png)
+  ![EC2 Instance Setup](https://github.com/SARWILLY/Cloud-Security/blob/162ca306566f562e7d6c203396d05d88323da665/docs/docs/screenshots/Screenshot%202025-07-21%20200821.png)
+  ![EC2 Instance Setup](https://github.com/SARWILLY/Cloud-Security/blob/162ca306566f562e7d6c203396d05d88323da665/docs/docs/screenshots/Screenshot%202025-07-21%20201052.png)
 
 ### 4. Create an S3 Bucket
 - Go to the **S3 Console**
 - Click **Create Bucket**
 - Name your bucket and choose a region
 - Uncheck "Block all public access" if you plan to test public object access
-  - [s3 Bucket Setup](docs/screenshots/screenshot-1753205816168.png)
-  - [s3 Bucket Setup](docs/screenshots/Screenshot_22-7-2025_184657_us-east-1.console.aws.amazon.com.jpeg)
-  - [s3 Bucket Setup](docs/screenshots/Screenshot_22-7-2025_184944_us-east-1.console.aws.amazon.com.jpeg)
-  - [s3 Bucket Setup](docs/screenshots/Screenshot_22-7-2025_185839_us-east-1.console.aws.amazon.com.jpeg)
-  - [s3 Bucket Setup](docs/screenshots/Screenshot_22-7-2025_19141_us-east-1.console.aws.amazon.com.jpeg)
+  ![s3 Bucket Setup](docs/screenshots/screenshot-1753205816168.png)
+  ![s3 Bucket Setup](docs/screenshots/Screenshot_22-7-2025_184657_us-east-1.console.aws.amazon.com.jpeg)
+  ![s3 Bucket Setup](docs/screenshots/Screenshot_22-7-2025_184944_us-east-1.console.aws.amazon.com.jpeg)
+  ![s3 Bucket Setup](docs/screenshots/Screenshot_22-7-2025_185839_us-east-1.console.aws.amazon.com.jpeg)
+  ![s3 Bucket Setup](docs/screenshots/Screenshot_22-7-2025_19141_us-east-1.console.aws.amazon.com.jpeg)
 
 ---
 
