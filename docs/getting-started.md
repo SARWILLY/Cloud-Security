@@ -30,6 +30,67 @@ Before diving in, make sure you have:
     - [IAM User Setup](docs/screenshots/Screenshot_22-7-2025_191557_us-east-1.console.aws.amazon.com.jpeg)
 ---
 
+# 🔐 Deep Dive: IAM Policies in AWS
+
+Understanding **IAM Policies** is critical for maintaining secure and well-governed access in AWS environments. They define *who* can do *what*, *where*, and *under what conditions*.
+
+---
+
+## 🧠 What Are IAM Policies?
+
+IAM Policies are JSON documents that explicitly state permissions. They’re attached to:
+- **Users**
+- **Groups**
+- **Roles**
+
+Policies work by evaluating permissions in the form of:
+- `json
+    {
+      "Effect": "Allow",
+      "Action": "s3:ListBucket",
+      "Resource": "*"
+ }`
+    
+The core components include:
+- Effect: Either "Allow" or "Deny"
+- Action: What actions are permitted (e.g., ec2:StartInstances)
+- Resource: Which AWS resource the policy affects
+- Condition: Optional filters based on time, IP, MFA, etc.
+
+🎯 Types of IAM Policies
+| Type | Description | Example | 
+|-----|------------------|--------|
+| Managed Policies | Pre-built and maintained by AWS or created by users | AmazonS3ReadOnlyAccess | 
+| Inline Policies | Embedded directly within a user, group, or role for a specific purpose | Custom EC2 start/stop logic | 
+| Permission Boundaries | Advanced control to limit maximum allowed permissions | Used with IAM roles in automation | 
+
+
+
+🔍 How Policies Are Evaluated
+Policies are evaluated using logical rules:
+- Explicit Deny always overrides an Allow
+- If no matching policy statement is found, access is implicitly denied
+- All relevant policies (attached to user, group, or role) are evaluated together
+
+🧪 Policy Simulator Testing
+To verify how permissions behave before applying them, use the IAM Policy Simulator. You can:
+- Simulate actions across multiple AWS services
+- Test existing managed or custom policies
+- Identify permission gaps or unintended access
+🧭 Your Practical Discovery
+You tested AmazonS3FullAccess and confirmed:
+- Full access to S3 actions like GetObject and PutObject
+- Denial of unrelated actions (e.g., AWS Config’s DeleteConformancePack)
+That’s exactly the kind of real-world validation that makes you a smarter cloud security practitioner.
+
+🚨 Common Mistakes to Avoid
+- Using overly permissive "Resource": "*" in production
+- Forgetting to apply conditions (like MFA or IP checks)
+- Attaching policies directly to users instead of using roles or groups
+- Not testing policies before deployment
+
+---
+
 ## 🧪 IAM Policy Simulation: AmazonS3FullAccess vs AWS Config Actions
 
 As part of understanding how IAM policies behave in specific contexts, I ran a simulation using the **IAM Policy Simulator** for a group named `Analyst`, which had the `AmazonS3FullAccess` policy attached.
