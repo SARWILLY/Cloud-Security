@@ -29,7 +29,7 @@ One of the most critical security measures I’ve implemented is tracking activi
 
 ## 🗂 Lifecycle Configuration for Log Files
 
-To keep my S3 log storage lean and cost-efficient, I created lifecycle rules for each bucket that holds logs—whether from *CloudTrail, **S3 Server Access Logs, or **Root Account Alerts*. This helps automate cleanup and prevent long-term clutter.
+To keep my S3 log storage lean and cost efficient, I created lifecycle rules for each bucket that holds logs; whether from **CloudTrail**, **S3 Server Access Logs**, or **Root Account Alerts**. This helps automate cleanup and prevent long-term clutter.
 
 ### 🔧 How I Set It Up
 
@@ -75,3 +75,4 @@ Here’s what one of my lifecycle rule snippets looks like:
   ]
 }
 ```
+![Lifecycle Rule](docs/docs/screenshots/screenshot-1753274051147.png)
