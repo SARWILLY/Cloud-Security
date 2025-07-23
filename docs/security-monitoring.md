@@ -75,4 +75,4 @@ Here’s what one of my lifecycle rule snippets looks like:
   ]
 }
 ```
-![Lifecycle Rule](docs/docs/screenshots/screenshot-1753274051147.png)
+![Lifecycle Rule](docs/screenshots/screenshot-1753274051147.png)
