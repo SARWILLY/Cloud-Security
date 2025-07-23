@@ -81,5 +81,4 @@ Here’s what one of my lifecycle rule snippets looks like:
 ### ✅ My Takeaway
 Lifecycle rules help me automate data hygiene. I don’t have to manually clean up buckets or worry about excessive storage costs. It’s another layer of discipline that supports good security operations.
 
-```
 ![Lifecycle Rule](docs/screenshots/screenshot-1753274051147.png)
