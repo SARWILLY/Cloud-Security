@@ -44,12 +44,13 @@ IAM Policies are JSON documents that explicitly state permissions. They’re att
 - **Roles**
 
 Policies work by evaluating permissions in the form of:
-- `json
+```json
     {
       "Effect": "Allow",
       "Action": "s3:ListBucket",
       "Resource": "*"
- }`
+    }
+```
     
 The core components include:
 - Effect: Either "Allow" or "Deny"
@@ -112,7 +113,7 @@ I simulated the following AWS Config actions:
 - Policy simulation avoids accidental misconfigurations and reinforces the importance of least privilege.
 
 ### 📸 Screenshot Example
-![Policy Simulator showing denied AWS Config actions](docs/docs/screenshots/Screenshot_22-7-2025_192314_policysim.aws.amazon.com.jpeg)
+![Policy Simulator showing denied AWS Config actions](docs/screenshots/Screenshot_22-7-2025_192314_policysim.aws.amazon.com.jpeg)
 
 ---
 
