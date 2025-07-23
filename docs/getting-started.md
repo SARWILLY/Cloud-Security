@@ -76,6 +76,29 @@ Policies work by evaluating permissions in the form of:
       "Resource": "*"
     }
 ```
+
+---
+
+## 🔒 Understanding S3 Bucket Policies and Object Ownership
+
+While working with S3 bucket policies, I learned something important: even if a policy grants access to objects inside a bucket, it **only applies to objects owned by the same account** that owns the bucket.
+
+### 📘 Key Point
+S3 bucket policies are written in JSON format and can allow or deny access to **bucket-level** and **object-level** resources. However:
+
+> **Bucket policies don't apply to objects owned by other AWS accounts**, even if the objects are in your bucket.
+
+### 🧪 Realization
+This came into play when testing access permissions. Although I granted `s3:GetObject` and `s3:PutObject` permissions through my bucket policy, access was denied for objects uploaded by another account unless:
+- The object ACL (Access Control List) permitted it
+- Ownership was transferred or permissions were set explicitly
+
+### ⚠️ Tip
+For cross-account access to bucket objects:
+- Use **Object ACLs** in addition to bucket policies
+- Consider enabling **bucket ownership controls** to ensure new objects inherit ownership correctly
+
+---
     
 The core components include:
 - Effect: Either "Allow" or "Deny"
@@ -89,8 +112,6 @@ The core components include:
 | Managed Policies | Pre-built and maintained by AWS or created by users | AmazonS3ReadOnlyAccess | 
 | Inline Policies | Embedded directly within a user, group, or role for a specific purpose | Custom EC2 start/stop logic | 
 | Permission Boundaries | Advanced control to limit maximum allowed permissions | Used with IAM roles in automation | 
-
-
 
 🔍 How Policies Are Evaluated
 Policies are evaluated using logical rules:
@@ -166,6 +187,46 @@ I focused on key S3 operations across buckets and objects:
 
 ### 📸 Screenshot Reference
 ![IAM Simulation: AmazonS3FullAccess results](docs/screenshots/Screenshot_22-7-2025_192452_policysim.aws.amazon.com.jpeg)
+
+---
+
+## 📑 S3 Server Access Logging for Auditing
+
+As I advanced in this project, I discovered how important it is to **track activity inside my S3 buckets**. AWS provides a built-in feature called **Server Access Logging** that helps with this. I activated it to monitor who accessed my buckets, what actions they performed, and when.
+
+### 🛠️ What I Did
+To enable logging:
+1. I created a separate S3 bucket to store logs—this avoids mixing logs with my main bucket's data.
+2. I navigated to the properties of my target bucket.
+3. Under **Server Access Logging**, I selected **Enable** and chose my logging bucket as the destination.
+4. I saved the changes and gave it some time to start collecting logs.
+
+### 📸 Screenshot Reference
+![My logs bucket](docs/screenshots/Screenshot_23-7-2025_122356_us-east-1.console.aws.amazon.com.jpeg)
+
+### 📄 What the Logs Contain
+Each log record shows:
+- **Requester identity** (IAM user or role)
+- **Bucket name and object key**
+- **Action performed** (GET, PUT, DELETE, etc.)
+- **Timestamp**
+- **Response status**
+
+It looks something like this: 79a5ce75f2a7c4e3 requester-id [14/Jul/2025:11:05:21 +0000] 192.168.1.2 GET /my-file.txt "200"
+
+### 🧠 Why It's Useful
+- Helps me **audit access patterns** for compliance
+- Lets me detect suspicious behavior or unintended sharing
+- Acts as a learning tool to understand how IAM permissions and requests work behind the scenes
+
+### ⚠️ Things to Keep in Mind
+- **Log delivery can take a few hours**, so it's not instant
+- Bucket permissions need to be properly configured to allow AWS to write logs
+- Over time, logs can pile up—so I plan to configure a **lifecycle rule** to archive or delete old logs
+
+### 📸 Screenshot Reference
+![Server Access Logging](docs/screenshots/Screenshot_23-7-2025_12313_us-east-1.console.aws.amazon.com.jpeg)
+![Server Access Logging](docs/screenshots/Screenshot_23-7-2025_12511_us-east-1.console.aws.amazon.com.jpeg)
 
 ---
 
