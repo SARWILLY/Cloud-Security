@@ -36,8 +36,8 @@ Before diving in, make sure you have:
 - Select instance type: `t2.micro`
 - Configure security group: open SSH (port 22) for access
   - [EC2 Instance Setup](https://github.com/SARWILLY/Cloud-Security/blob/dd77120c75caeefdadc83c3248a9dc684eb674d5/docs/docs/screenshots/Screenshot%202025-07-21%20172612.png)
-  - [EC2 Instance Setup](docs/screenshots/Screenshot 2025-07-21 200821.png)
-  - [EC2 Instance Setup](docs/screenshots/Screenshot 2025-07-21 201052.png)
+  - [EC2 Instance Setup](https://github.com/SARWILLY/Cloud-Security/blob/162ca306566f562e7d6c203396d05d88323da665/docs/docs/screenshots/Screenshot%202025-07-21%20200821.png)
+  - [EC2 Instance Setup](https://github.com/SARWILLY/Cloud-Security/blob/162ca306566f562e7d6c203396d05d88323da665/docs/docs/screenshots/Screenshot%202025-07-21%20201052.png)
 
 ### 4. Create an S3 Bucket
 - Go to the **S3 Console**
