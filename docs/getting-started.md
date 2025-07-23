@@ -28,6 +28,59 @@ Before diving in, make sure you have:
 - Enable MFA (Multi-Factor Authentication) for enhanced security
     - [IAM User Setup](docs/screenshots/Screenshot_22-7-2025_19100_us-east-1.console.aws.amazon.com.jpeg)
     - [IAM User Setup](docs/screenshots/Screenshot_22-7-2025_191557_us-east-1.console.aws.amazon.com.jpeg)
+---
+
+## 🧪 IAM Policy Simulation: AmazonS3FullAccess vs AWS Config Actions
+
+As part of understanding how IAM policies behave in specific contexts, I ran a simulation using the **IAM Policy Simulator** for a group named `Analyst`, which had the `AmazonS3FullAccess` policy attached.
+
+### 🔍 What I Tested
+I simulated the following AWS Config actions:
+1. `DeletePendingAggregation`
+2. `DeleteRemediationConfiguration` (Resource: RemediationConfiguration)
+3. `DeleteConfigurationAggregator` (Resource: ConfigurationAggregator)
+4. `DeleteConformancePack` (Resource: ConformancePack)
+
+### ❌ Results
+- All actions were **Denied**, due to **implicit denial** (no matching policies for these actions).
+- This confirms that the `AmazonS3FullAccess` policy does *not* grant permissions for AWS Config operations—showing how precise policy scopes are.
+
+### ✅ What I Learned
+- IAM policies are **action-specific** and must explicitly define permissions for each AWS service.
+- Using the **IAM Policy Simulator** is a reliable way to verify access *before* deployment or testing in live environments.
+- Policy simulation avoids accidental misconfigurations and reinforces the importance of least privilege.
+
+### 📸 Screenshot Example
+- [Policy Simulator showing denied AWS Config actions](docs/screenshots/Screenshot_22-7-2025_192953_us-east-1.console.aws.amazon.com.jpeg)
+
+---
+
+## 🧪 IAM Policy Simulation: Validating AmazonS3FullAccess Scope
+
+Continuing my IAM policy evaluation, I simulated S3-related actions for a user named `Sar Williams` who was attached to the managed policy `AmazonS3FullAccess`.
+
+### 🔍 Actions Simulated
+I focused on key S3 operations across buckets and objects:
+- `s3:ListBucket`
+- `s3:GetObject`
+- `s3:PutObject`
+- `s3:DeleteObject`
+- `s3:ListAllMyBuckets`
+- AWS Config action: `DeletePendingAggregationRequest`
+
+### ✅ Simulation Results
+- All **Amazon S3 actions** returned **Allowed** with a matching policy statement.
+- The AWS Config action was **Denied** due to no matching permissions.
+
+### 🧠 What I Learned
+- `AmazonS3FullAccess` fully supports bucket-level and object-level interactions.
+- No cross-service permissions are granted—AWS Config actions require their own explicit policies.
+- The IAM Policy Simulator is essential for verifying granular access and refining policy design.
+
+### 📸 Screenshot Reference
+- [IAM Simulation: AmazonS3FullAccess results](docs/screenshots/Screenshot_22-7-2025_192452_policysim.aws.amazon.com.jpeg)
+
+---
 
 ### 3. Launch Your First EC2 Instance
 - Navigate to the **EC2 Console**
