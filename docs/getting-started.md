@@ -26,8 +26,8 @@ Before diving in, make sure you have:
 - Go to **IAM Console** from your AWS dashboard
 - Create a new IAM user with Administrator Access (for learning purposes)
 - Enable MFA (Multi-Factor Authentication) for enhanced security
-    - [IAM User Setup](docs/docs/screenshots/Screenshot_22-7-2025_19100_us-east-1.console.aws.amazon.com.jpeg)
-    - [IAM User Setup](docs/docs/screenshots/Screenshot_22-7-2025_191557_us-east-1.console.aws.amazon.com.jpeg)
+    - [IAM User Setup](docs/screenshots/Screenshot_22-7-2025_19100_us-east-1.console.aws.amazon.com.jpeg)
+    - [IAM User Setup](docs/screenshots/Screenshot_22-7-2025_191557_us-east-1.console.aws.amazon.com.jpeg)
 
 ### 3. Launch Your First EC2 Instance
 - Navigate to the **EC2 Console**
@@ -36,19 +36,19 @@ Before diving in, make sure you have:
 - Select instance type: `t2.micro`
 - Configure security group: open SSH (port 22) for access
   - [EC2 Instance Setup](https://github.com/SARWILLY/Cloud-Security/blob/dd77120c75caeefdadc83c3248a9dc684eb674d5/docs/docs/screenshots/Screenshot%202025-07-21%20172612.png)
-  - [EC2 Instance Setup](docs/docs/screenshots/Screenshot%2025-07-21%200821.png)
-  - [EC2 Instance Setup](docs/docs/screenshots/Screenshot%2025-07-21%201052.png)
+  - [EC2 Instance Setup](docs/screenshots/Screenshot%2025-07-21%200821.png)
+  - [EC2 Instance Setup](docs/screenshots/Screenshot%2025-07-21%201052.png)
 
 ### 4. Create an S3 Bucket
 - Go to the **S3 Console**
 - Click **Create Bucket**
 - Name your bucket and choose a region
 - Uncheck "Block all public access" if you plan to test public object access
-  - [s3 Bucket Setup](docs/docs/screenshots/screenshot-1753205816168.png)
-  - [s3 Bucket Setup](docs/docs/screenshots/Screenshot_22-7-2025_184657_us-east-1.console.aws.amazon.com.jpeg)
-  - [s3 Bucket Setup](docs/docs/screenshots/Screenshot_22-7-2025_184944_us-east-1.console.aws.amazon.com.jpeg)
-  - [s3 Bucket Setup](docs/docs/screenshots/Screenshot_22-7-2025_185839_us-east-1.console.aws.amazon.com.jpeg)
-  - [s3 Bucket Setup](docs/docs/screenshots/Screenshot_22-7-2025_19141_us-east-1.console.aws.amazon.com.jpeg)
+  - [s3 Bucket Setup](docs/screenshots/screenshot-1753205816168.png)
+  - [s3 Bucket Setup](docs/screenshots/Screenshot_22-7-2025_184657_us-east-1.console.aws.amazon.com.jpeg)
+  - [s3 Bucket Setup](docs/screenshots/Screenshot_22-7-2025_184944_us-east-1.console.aws.amazon.com.jpeg)
+  - [s3 Bucket Setup](docs/screenshots/Screenshot_22-7-2025_185839_us-east-1.console.aws.amazon.com.jpeg)
+  - [s3 Bucket Setup](docs/screenshots/Screenshot_22-7-2025_19141_us-east-1.console.aws.amazon.com.jpeg)
 
 ---
 
