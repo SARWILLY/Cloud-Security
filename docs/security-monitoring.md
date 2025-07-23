@@ -13,12 +13,13 @@ One of the most critical security measures I’ve implemented is tracking activi
    ```json
    { $.userIdentity.type = "Root" && $.userIdentity.invokedBy NOT EXISTS }
    ```
-   - Connected the filter to an SNS Topic that sends email notifications.
+- Connected the filter to an SNS Topic that sends email notifications.
 - Subscribed my email to the topic for instant alerts.
 - Tested the setup by logging in with the root user and viewing billing, an alert landed in my inbox as expected.
   
 📸 Screenshot:
   ![Root Activity DetectedSNS alert triggered by root account](docs/screenshots/screenshot-1753275813773.png)
+  ![SNS Configuration](docs/docs/screenshots/screenshot-1753273492614.png)
 
 ### ✅ Why This Matters to Me
 - I rarely use the root account, and I treat it like a red flag if it's ever activated.
