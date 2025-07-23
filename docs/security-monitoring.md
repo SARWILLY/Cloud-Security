@@ -19,7 +19,7 @@ One of the most critical security measures I’ve implemented is tracking activi
   
 📸 Screenshot:
   ![Root Activity DetectedSNS alert triggered by root account](docs/screenshots/screenshot-1753275813773.png)
-  ![SNS Configuration](docs/docs/screenshots/screenshot-1753273492614.png)
+  ![SNS Configuration](docs/screenshots/screenshot-1753273492614.png)
 
 ### ✅ Why This Matters to Me
 - I rarely use the root account, and I treat it like a red flag if it's ever activated.
