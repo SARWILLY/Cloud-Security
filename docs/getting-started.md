@@ -22,7 +22,32 @@ Before diving in, make sure you have:
 - Follow the prompts to verify your email, payment method, and identity
 - Select the **Free Tier** to avoid charges during early learning
 
-### 2. I Set Up IAM User
+---
+
+### 2. Create an S3 Bucket
+**Scope:** Amazon S3 is all about storing data in the cloud. You can keep any amount of data, big or small, and access it from anywhere. It's got solid security, performance, and comes with a bunch of features to manage and organize your data. Perfect for things like backups, archives, big data analytics, and even web and mobile apps. So it's pretty versatile.
+- Go to the **S3 Console**
+- Click **Create Bucket**
+- Name your bucket and choose a region
+- Uncheck "Block all public access" if you plan to test public object access.
+-   `
+        Note: It's generally a good idea to keep the "Block all public access" setting turned on, especially for sensitive data, as it prevents any accidental exposure of your bucket's contents to the public. Keeping public access blocked is a key step in maintaining security and ensuring data is only accessible by authorized users.
+    `
+-   `
+    Another thing to get in mind is: Enabling Bucket Versioning.
+    `
+- `What is Bucket Versioning?
+    Bucket Versioning Versioning in an S3 bucket allows you to keep multiple variants of an object in the same bucket. This means every time you modify or delete an object, S3 automatically keeps previous versions, allowing you to retrieve and restore them if needed. It's like a safety net against accidental deletions or overwrites.
+    `
+  ![s3 Bucket Setup](docs/screenshots/screenshot-1753205816168.png)
+  ![s3 Bucket Setup](docs/screenshots/Screenshot_22-7-2025_184657_us-east-1.console.aws.amazon.com.jpeg)
+  ![s3 Bucket Setup](docs/screenshots/Screenshot_22-7-2025_184944_us-east-1.console.aws.amazon.com.jpeg)
+  ![s3 Bucket Setup](docs/screenshots/Screenshot_22-7-2025_185839_us-east-1.console.aws.amazon.com.jpeg)
+  ![s3 Bucket Setup](docs/screenshots/Screenshot_22-7-2025_19141_us-east-1.console.aws.amazon.com.jpeg)
+
+---
+
+### 3. I Set Up IAM User
 - Go to **IAM Console** from your AWS dashboard
 - Create a new IAM user with Administrator Access (for learning purposes) `junior-analyst`
 - Enable MFA (Multi-Factor Authentication) for enhanced security
@@ -144,7 +169,7 @@ I focused on key S3 operations across buckets and objects:
 
 ---
 
-### 3. Launch Your First EC2 Instance
+### 4. Launch Your First EC2 Instance
 - Navigate to the **EC2 Console**
 - Click **Launch Instance**
 - Choose a Free Tier eligible AMI (e.g., Amazon Linux 2023)
@@ -153,17 +178,6 @@ I focused on key S3 operations across buckets and objects:
   ![EC2 Instance Setup](https://github.com/SARWILLY/Cloud-Security/blob/dd77120c75caeefdadc83c3248a9dc684eb674d5/docs/docs/screenshots/Screenshot%202025-07-21%20172612.png)
   ![EC2 Instance Setup](https://github.com/SARWILLY/Cloud-Security/blob/162ca306566f562e7d6c203396d05d88323da665/docs/docs/screenshots/Screenshot%202025-07-21%20200821.png)
   ![EC2 Instance Setup](https://github.com/SARWILLY/Cloud-Security/blob/162ca306566f562e7d6c203396d05d88323da665/docs/docs/screenshots/Screenshot%202025-07-21%20201052.png)
-
-### 4. Create an S3 Bucket
-- Go to the **S3 Console**
-- Click **Create Bucket**
-- Name your bucket and choose a region
-- Uncheck "Block all public access" if you plan to test public object access
-  ![s3 Bucket Setup](docs/screenshots/screenshot-1753205816168.png)
-  ![s3 Bucket Setup](docs/screenshots/Screenshot_22-7-2025_184657_us-east-1.console.aws.amazon.com.jpeg)
-  ![s3 Bucket Setup](docs/screenshots/Screenshot_22-7-2025_184944_us-east-1.console.aws.amazon.com.jpeg)
-  ![s3 Bucket Setup](docs/screenshots/Screenshot_22-7-2025_185839_us-east-1.console.aws.amazon.com.jpeg)
-  ![s3 Bucket Setup](docs/screenshots/Screenshot_22-7-2025_19141_us-east-1.console.aws.amazon.com.jpeg)
 
 ---
 
