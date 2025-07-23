@@ -62,3 +62,5 @@ This is a beginner-level project. Expect a learning-by-doing approach—not perf
 
 ## 🗣️ Connect
 Feel free to open an issue, start a discussion, or drop your thoughts. Let’s learn and grow together in cloud security!
+
+[Getting Started Guide](docs/getting-started.md)
