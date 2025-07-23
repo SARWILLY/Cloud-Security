@@ -16,15 +16,15 @@ Before diving in, make sure you have:
 
 ## 🛠️ Step-by-Step Setup
 
-### 1. Create an AWS Account
+### 1. I Created an AWS Account
 - Visit [https://aws.amazon.com](https://aws.amazon.com)
 - Click **Create an AWS Account**
 - Follow the prompts to verify your email, payment method, and identity
 - Select the **Free Tier** to avoid charges during early learning
 
-### 2. Set Up IAM User
+### 2. I Set Up IAM User
 - Go to **IAM Console** from your AWS dashboard
-- Create a new IAM user with Administrator Access (for learning purposes)
+- Create a new IAM user with Administrator Access (for learning purposes) `junior-analyst`
 - Enable MFA (Multi-Factor Authentication) for enhanced security
     - [IAM User Setup](docs/screenshots/Screenshot_22-7-2025_19100_us-east-1.console.aws.amazon.com.jpeg)
     - [IAM User Setup](docs/screenshots/Screenshot_22-7-2025_191557_us-east-1.console.aws.amazon.com.jpeg)
